@@ -19,7 +19,7 @@ class CreateComicsTable extends Migration
             $table->char('title',100);
             $table->longText('description');
             $table->char('thumb',200);
-            $table->unsignedDecimal('price',5,2);
+            $table->unsignedDecimal('price',5,2)->nullable();
             $table->char('series',50);
             $table->date('sale_date');
             $table->char('type',100);

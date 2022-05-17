@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use app\comics;
+//use app\comics;
+use Illuminate\Support\Facades\DB;
 
 class ComicsSeeder extends Seeder
 {
@@ -229,5 +230,17 @@ class ComicsSeeder extends Seeder
 
             ],
         ];
+
+        foreach ($comics as $comic) {
+            DB::table('comics')->insert([
+            'title' => $comic['title'],
+            'description' => $comic['description'],
+            'thumb' => $comic['thumb'],
+            //'price' > $comic['price'],
+            'series'=> $comic['series'],
+            'sale_date' => $comic['sale_date'],
+            'type' => $comic['type']
+            ]);
+        }
     }
 }
