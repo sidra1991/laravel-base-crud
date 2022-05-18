@@ -14,7 +14,8 @@ class ComicsController extends Controller
      */
     public function index()
     {
-        //
+        $comics =  comics::paginate(5);
+        return view('home', compact('comics'));
     }
 
     /**
@@ -46,7 +47,7 @@ class ComicsController extends Controller
      */
     public function show(comics $comics)
     {
-        //
+        return view('roba.show');
     }
 
     /**
