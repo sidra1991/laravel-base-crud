@@ -21,7 +21,7 @@ class CreateComicTable extends Migration
             $table->char('thumb',200);
             $table->unsignedDecimal('price',5,2)->nullable();
             $table->char('series',50);
-            $table->date('sale_date');
+            $table->date('sale_date')->nullable();
             $table->char('type',100);
         });
     }

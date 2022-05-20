@@ -13,7 +13,7 @@ class ComicsController extends Controller
      */
     public function index()
     {
-        $comics =  Comic::paginate(5);
+        $comics =  Comic::all();
         return view('list', compact('comics'));
     }
 
@@ -35,7 +35,11 @@ class ComicsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $newComic = $request->all();
+
+        $comic = new comic();
+        $comic->fill($newComic);
+        $comic->save();
     }
 
     /**
