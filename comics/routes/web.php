@@ -21,3 +21,8 @@ Route::resource('/comic', 'ComicsController');
 Route::get('/', function () {
     return view('home');
 });
+
+Route::get('/completed', function () {
+    return view('store');
+});
+
